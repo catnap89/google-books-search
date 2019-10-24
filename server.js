@@ -3,7 +3,7 @@ const express = require('express');
 const routes = require("./routes");
 
 // process.env.PORT is used on Heroku to dynamically set the port number
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const app = express();  // Express App - Server
 
