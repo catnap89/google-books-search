@@ -1,0 +1,23 @@
+.jumbotron {
+  /* background-image: url('../../images/bg.png') !important; */
+  background-color: darkgray;
+  height: 370px;
+  margin: 0 !important;
+  /* padding: 0 !important; */
+  color: white;
+  font-size: 18px;
+  /* margin-top: 300px; */
+  padding-top: 150px;
+}
+
+/* .jumbotron div {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+} */
+
+@media (min-width: 576px) {
+  .jumbotron {
+    font-size: calc(10px + 14 * (100vw - 320px) / 800);
+  }
+}
