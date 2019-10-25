@@ -1,8 +1,7 @@
-
 import axios from "axios";
 
 export default {
-  // Searches the google books according to the search criteria given in the form
+  // Searches the NYT books according to the search criteria given in the form
   getNewBooks: function(title) {
     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + title);
   },

@@ -1,11 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Search from "./pages/Search";
-import Results from "./pages/Result";
+import Results from "./pages/Results";
 import Saved from "./pages/Saved";
-import NoResult from "./pages/NoResult";
-// import Navbar from "./components/navbar";
-// import Jumbotron from "./components/jumbotron";
+import NoMatch from "./pages/NoMatch";
 
 const App = () => (
   <Router>
@@ -14,7 +12,7 @@ const App = () => (
         <Route exact path="/" component={Search} />
         <Route exact path="/results" component={Results} />
         <Route exact path="/saved" component={Saved} />
-        <Route component={NoResult} />
+        <Route component={NoMatch} />
       </Switch>
     </div>
   </Router>

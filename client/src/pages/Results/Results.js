@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import { Container } from "../../components/grid";
-import { List, ListItem } from "../../components/list";
-import BookBtn from "../../components/bookBtn";
-import Navbar from "../../components/navbar";
-import Jumbotron from "../../components/jumbotron";
+import { Container } from "../../components/Grid";
+import { List, ListItem } from "../../components/List";
+import BookBtn from "../../components/BookBtn";
+import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 
 class Results extends Component {
@@ -15,23 +14,20 @@ class Results extends Component {
   };
 
   componentDidMount() {
-    // the result from search.js
     const data = this.props.location.data
     if (data && data.results.length > 0) {
 
       this.setState({
-        // set state of books as first 5 data(result) from search.js
         books: data.results.filter((value, index) => index < 5),
         target: "_blank"
       });
     } else {
-      // If there's no data
       this.setState({
         noResults: true
       });
     }
   }
-  
+
   saveBook = book => {
     API.saveBook(book)
       .then(res => {
@@ -48,8 +44,15 @@ class Results extends Component {
     if (this.state.noResults) {
       return (
         <div>
-          <Navbar />
-          <Jumbotron />
+          <Jumbotron>
+            <h1 className="display-4">(React) Google Books Search</h1>
+            <p className="lead">Search for and annotate books of interest.</p>
+            <hr className="my-4" />
+            <p className="lead">
+              <Link className="btn btn-default btn-lg" to="/" role="button">New Search</Link>
+              <Link className="btn btn-default btn-lg" to="/saved" role="button">Saved Books</Link>
+            </p>
+          </Jumbotron>
           <Container>
             <Link to="/">No results - click here to search again.</Link>
           </Container>
@@ -58,8 +61,15 @@ class Results extends Component {
     }
     return (
       <div>
-        <Navbar />
-        <Jumbotron />
+        <Jumbotron>
+          <h1 className="display-4">(React) Google Books Search</h1>
+          <p className="lead">Search for and save books of interest.</p>
+          <hr className="my-4" />
+          <p className="lead">
+            <Link className="btn btn-default btn-lg" to="/" role="button">New Search</Link>
+            <Link className="btn btn-default btn-lg" to="/saved" role="button">Saved Books</Link>
+          </p>
+        </Jumbotron>
         <Container>
           <h2>Search Results</h2>
           <List>

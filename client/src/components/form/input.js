@@ -1,5 +1,5 @@
 import React from "react";
-import { Label } from "./label";
+import { Label } from "./Label";
 
 export const Input = props => (
   <div className="form-group">

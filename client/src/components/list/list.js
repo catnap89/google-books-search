@@ -1,5 +1,5 @@
 import React from "react";
-// import "./list.css";
+import "./List.css";
 
 export const List = ({ children }) => {
   return (
