@@ -2,7 +2,7 @@
   "name": "google_books_search_react",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "dependencies": {
     "axios": "^0.19.0",
     "express": "^4.17.1",
